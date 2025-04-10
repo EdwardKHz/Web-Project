@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
+    <script src="../js/quizScript.js"></script>
   </head>
   <body>
     <div id="question1">
@@ -114,19 +115,19 @@
     <div id="question9">
         <h3>9. What was the main reason behind the success of the first web browsers like Mosaic and Netscape?</h3>
         <form>
-            <input type="radio" id="qu1An1" name="qu1" value="1">
+            <input type="radio" id="qu9An1" name="qu9" value="1">
             <label for="qu1An1">A&#41; They were text-based</label><br>
-            <input type="radio" id="qu1An2" name="qu1" value="2">
+            <input type="radio" id="qu9An2" name="qu9" value="2">
             <label for="qu1An2">B&#41; They allowed easy navigation with clickable links</label><br>
-            <input type="radio" id="qu1An3" name="qu1" value="3">
+            <input type="radio" id="qu9An3" name="qu9" value="3">
             <label for="qu1An3">C&#41; They required high-speed internet connections</label><br>
-            <input type="radio" id="qu1An4" name="qu1" value="4">
+            <input type="radio" id="qu9An4" name="qu9" value="4">
             <label for="qu1An4">D&#41; They were only available on UNIX systems</label><br>
         </form>
     </div>
 
     <div id="question10">
-        <h3>10. What significant feature was introduced by Apple’s Safari 2.0 in 2005?</h3>
+        <h3>10. What significant feature was introduced by Apple's Safari 2.0 in 2005?</h3>
         <form>
             <input type="radio" id="qu10An1" name="qu10" value="1">
             <label for="qu10An1">A&#41; Pop-up blocker</label><br>
@@ -268,6 +269,10 @@
             <label for="qu20An4">D&#41; 90.1%</label><br>
         </form>
     </div>
+    <div id="submit">
+        <input type="button" value="Send" onclick="calculate()">
+    </div>
 
-  </body>
+    </body>
+    
 </html>
