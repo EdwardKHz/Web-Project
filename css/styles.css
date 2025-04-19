@@ -1,0 +1,106 @@
+:root {
+    --primary-color: #ff6b6b;
+    --middle-color: #ffa254;
+    --secondary-color: #ffd93d;
+    --accent-color: #60a5fa;
+    --dark-color: #1a1a1a;
+    --light-color: #ffffff;
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --code-bg: #1e1e1e;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    --sidebar-width: 280px;
+    --header-height: 70px;
+    --transition-speed: 0.3s;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --border-radius: 12px;
+    --gradient-text: linear-gradient(45deg, #ff6b6b, #ffd93d);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    padding-top: 2em;
+}
+
+#wrapper {
+    width: 80%;
+    margin: 0 auto; 
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--middle-color);
+}
+
+a:hover {
+    color: var(--middle-color);
+    text-decoration: underline;
+}
+
+#wrapper .subject{
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+}
+
+#wrapper .subject h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+#wrapper .subject p {
+    margin-top: 1em;
+}
+
+#wrapper .subject ul {
+    padding:1em;
+}
+
+table {
+    border: 2px solid var(--middle-color);
+    border-spacing: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid var(--middle-color);
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--surface-color);
+    color: var(--light-color);
+}
+
+@media all and (max-width: 550px){
+    #wrapper {
+        width: 90%;
+    }
+
+    table th, table td {
+        text-align: center;
+    }
+
+}
