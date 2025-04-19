@@ -26,6 +26,11 @@
     box-sizing: border-box;
 }
 
+.arabic {
+    direction: rtl;
+    text-align: right;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -87,6 +92,10 @@ table th, table td {
     border: 1px solid var(--middle-color);
     padding: 8px;
     text-align: left;
+}
+
+.arabic table th, table td{
+    text-align: right;
 }
 
 table th {
