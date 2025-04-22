@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive quiz about web development and research">
+    <meta name="theme-color" content="#2563eb">
+    <title>Quiz - My Professional Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <header>
+            <div class="logo">
+                <a href="index.html">Alime.</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cv-anthony.html">CV</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="quiz.html" class="active">Quiz</a></li>
+                    <li><a href="arabic.html">Arabic</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <h3>Quiz Sections</h3>
+                <ul>
+                    <li><a href="#web-dev"><i class="fas fa-code"></i> Web Development</a></li>
+                    <li><a href="#research"><i class="fas fa-search"></i> Research</a></li>
+                    <li><a href="#general"><i class="fas fa-globe"></i> General Knowledge</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content" id="mainContent">
+            <section id="quiz-intro">
+                <h2><i class="fas fa-question-circle"></i> Test Your Knowledge</h2>
+                <p>This quiz contains multiple choice and free text questions about web development, research, and general knowledge. Take your time and answer carefully!</p>
+                <div class="quiz-stats">
+                    <p><i class="fas fa-clock"></i> Time: <span id="timer">30:00</span></p>
+                    <p><i class="fas fa-star"></i> Score: <span id="score">0</span></p>
+                </div>
+            </section>
+
+            <form id="quizForm" class="quiz-container">
+                <section id="web-dev" class="quiz-section">
+                    <h2><i class="fas fa-code"></i> Web Development Questions</h2>
+                    
+                    <div class="quiz-question">
+                        <h3>1. What does HTML stand for?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="a">
+                                Hyper Text Markup Language
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="b">
+                                High Tech Modern Language
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q1" value="c">
+                                Hyper Transfer Markup Language
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>2. Which CSS property is used to change the text color?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="a">
+                                text-color
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="b">
+                                color
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q2" value="c">
+                                font-color
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="research" class="quiz-section">
+                    <h2><i class="fas fa-search"></i> Research Questions</h2>
+                    
+                    <div class="quiz-question">
+                        <h3>3. What is the first step in the research process?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="a">
+                                Data Collection
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="b">
+                                Literature Review
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q3" value="c">
+                                Hypothesis Formation
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>4. What is a research methodology?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="a">
+                                A set of tools used in research
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="b">
+                                A systematic approach to conducting research
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q4" value="c">
+                                A type of research paper
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="general" class="quiz-section">
+                    <h2><i class="fas fa-globe"></i> General Knowledge</h2>
+                    
+                    <div class="quiz-question">
+                        <h3>5. What is the capital of France?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="a">
+                                London
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="b">
+                                Paris
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q5" value="c">
+                                Berlin
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>6. What is responsive web design?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="q6" value="a">
+                                A design that changes colors based on user preferences
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q6" value="b">
+                                A design that adapts to different screen sizes
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="q6" value="c">
+                                A design that responds to user clicks
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-check-circle"></i> Submit Quiz
+                </button>
+            </form>
+
+            <div id="results" class="quiz-results" style="display: none;">
+                <h2><i class="fas fa-trophy"></i> Quiz Results</h2>
+                <div class="results-content">
+                    <p>Your Score: <span id="finalScore">0</span>/100</p>
+                    <p>Time Taken: <span id="timeTaken">0:00</span></p>
+                    <div id="feedback"></div>
+                </div>
+                <button id="retryBtn" class="submit-btn">
+                    <i class="fas fa-redo"></i> Try Again
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 My Professional Website. All rights reserved.</p>
+            <p class="footer-tech">Built with modern web technologies</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sidebar toggle functionality
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const nav = document.querySelector('nav');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('expanded');
+        });
+
+        // Mobile menu toggle functionality
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const navUl = nav.querySelector('ul');
+            if (navUl) {
+                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                const navUl = nav.querySelector('ul');
+                if (navUl) {
+                    navUl.style.display = 'none';
+                }
+            }
+        });
+
+        // Quiz functionality
+        const quizForm = document.getElementById('quizForm');
+        const results = document.getElementById('results');
+        const finalScore = document.getElementById('finalScore');
+        const timeTaken = document.getElementById('timeTaken');
+        const feedback = document.getElementById('feedback');
+        const retryBtn = document.getElementById('retryBtn');
+        const timer = document.getElementById('timer');
+        const score = document.getElementById('score');
+
+        let timeLeft = 1800; // 30 minutes in seconds
+        let currentScore = 0;
+
+        // Timer functionality
+        const timerInterval = setInterval(() => {
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                submitQuiz();
+            }
+        }, 1000);
+
+        // Quiz submission
+        quizForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitQuiz();
+        });
+
+        function submitQuiz() {
+            clearInterval(timerInterval);
+            // Calculate score and show results
+            const formData = new FormData(quizForm);
+            let correctAnswers = 0;
+            
+            // Check answers (example answers)
+            const answers = {
+                q1: 'a', // HTML stands for Hyper Text Markup Language
+                q2: 'b', // color property
+                q3: 'b', // Literature Review
+                q4: 'b', // Systematic approach
+                q5: 'b', // Paris
+                q6: 'b'  // Adapts to screen sizes
+            };
+
+            for (const [question, answer] of Object.entries(answers)) {
+                if (formData.get(question) === answer) {
+                    correctAnswers++;
+                }
+            }
+
+            currentScore = Math.round((correctAnswers / Object.keys(answers).length) * 100);
+            score.textContent = currentScore;
+            finalScore.textContent = currentScore;
+            
+            // Calculate time taken
+            const timeElapsed = 1800 - timeLeft;
+            const minutesElapsed = Math.floor(timeElapsed / 60);
+            const secondsElapsed = timeElapsed % 60;
+            timeTaken.textContent = `${minutesElapsed}:${secondsElapsed.toString().padStart(2, '0')}`;
+
+            // Show feedback
+            feedback.innerHTML = `
+                <p>You answered ${correctAnswers} out of ${Object.keys(answers).length} questions correctly.</p>
+                <p>${getFeedbackMessage(currentScore)}</p>
+            `;
+
+            // Show results and hide quiz
+            quizForm.style.display = 'none';
+            results.style.display = 'block';
+        }
+
+        function getFeedbackMessage(score) {
+            if (score >= 90) return "Excellent! You have a strong understanding of the topics.";
+            if (score >= 70) return "Good job! You have a good grasp of most concepts.";
+            if (score >= 50) return "Not bad! You have some understanding of the topics.";
+            return "Keep studying! You might want to review the material again.";
+        }
+
+        // Retry button functionality
+        retryBtn.addEventListener('click', () => {
+            // Reset quiz
+            quizForm.reset();
+            quizForm.style.display = 'block';
+            results.style.display = 'none';
+            
+            // Reset timer and score
+            timeLeft = 1800;
+            currentScore = 0;
+            score.textContent = '0';
+            
+            // Restart timer
+            const timerInterval = setInterval(() => {
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timer.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    submitQuiz();
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 

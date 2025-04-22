@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Media gallery and multimedia content">
+    <meta name="theme-color" content="#2563eb">
+    <title>Media Gallery - My Professional Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <header>
+            <div class="logo">
+                <a href="index.html">Alime.</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cv-anthony.html">CV</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="media.html" class="active">Media</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="arabic.html">Arabic</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <h3>Media Categories</h3>
+                <ul>
+                    <li><a href="#videos"><i class="fas fa-video"></i> Videos</a></li>
+                    <li><a href="#photos"><i class="fas fa-images"></i> Photos</a></li>
+                    <li><a href="#audio"><i class="fas fa-music"></i> Audio</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content" id="mainContent">
+            <section id="videos">
+                <h2><i class="fas fa-video"></i> Featured Videos</h2>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <div class="video-container">
+                            <video controls poster="images/video-thumbnail-1.jpg">
+                                <source src="videos/sample-video-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h3>Research Presentation</h3>
+                        <p>A detailed presentation of my latest research findings</p>
+                    </div>
+                    <div class="media-item">
+                        <div class="video-container">
+                            <video controls poster="images/video-thumbnail-2.jpg">
+                                <source src="videos/sample-video-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h3>Academic Lecture</h3>
+                        <p>Recorded lecture on modern web technologies</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="photos">
+                <h2><i class="fas fa-images"></i> Photo Gallery</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="images/gallery-1.jpg" alt="Research Conference">
+                        <div class="gallery-overlay">
+                            <h3>Research Conference</h3>
+                            <p>Presenting at the International Conference</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery-2.jpg" alt="Academic Work">
+                        <div class="gallery-overlay">
+                            <h3>Academic Work</h3>
+                            <p>Working on research projects</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery-3.jpg" alt="Team Collaboration">
+                        <div class="gallery-overlay">
+                            <h3>Team Collaboration</h3>
+                            <p>Working with research team</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gallery-4.jpg" alt="Presentation">
+                        <div class="gallery-overlay">
+                            <h3>Presentation</h3>
+                            <p>Delivering academic presentation</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="audio">
+                <h2><i class="fas fa-music"></i> Audio Content</h2>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="audio/lecture-1.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <h3>Lecture Recording</h3>
+                        <p>Audio recording of a recent lecture</p>
+                    </div>
+                    <div class="media-item">
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="audio/presentation-1.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <h3>Research Presentation</h3>
+                        <p>Audio from a research presentation</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 My Professional Website. All rights reserved.</p>
+            <p class="footer-tech">Built with modern web technologies</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sidebar toggle functionality
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const nav = document.querySelector('nav');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('expanded');
+        });
+
+        // Mobile menu toggle functionality
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const navUl = nav.querySelector('ul');
+            if (navUl) {
+                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                const navUl = nav.querySelector('ul');
+                if (navUl) {
+                    navUl.style.display = 'none';
+                }
+            }
+        });
+
+        // Gallery image hover effect
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.querySelector('.gallery-overlay').style.opacity = '1';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.querySelector('.gallery-overlay').style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html> 
