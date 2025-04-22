@@ -16,6 +16,7 @@
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --border-radius: 12px;
+    --gradient: linear-gradient(45deg, var(--primary-color), var(--middle-color));
 }
 
 /* Reset & Base Styles */
@@ -31,7 +32,7 @@ body {
     color: var(--light-color);
     background-color: var(--dark-color);
     min-height: 100vh;
-    padding-top: 2em;
+    padding-top: var(--header-height);
 }
 
 .layout {
