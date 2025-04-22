@@ -1,6 +1,7 @@
 /* Modern Design Variables */
 :root {
     --primary-color: #ff6b6b;
+    --middle-color: #ffa254;
     --secondary-color: #ffd93d;
     --accent-color: #60a5fa;
     --dark-color: #1a1a1a;
@@ -30,6 +31,7 @@ body {
     color: var(--light-color);
     background-color: var(--dark-color);
     min-height: 100vh;
+    padding-top: 2em;
 }
 
 .layout {
@@ -219,4 +221,122 @@ nav ul li a.active::after {
         height: 36px;
         font-size: 1.25rem;
     }
+}
+
+/* Joseph */
+.arabic {
+    direction: rtl;
+    text-align: right;
+}
+
+#wrapper {
+    width: 80%;
+    margin: 0 auto; 
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--middle-color);
+}
+
+a:hover {
+    color: var(--middle-color);
+    text-decoration: underline;
+}
+
+/* Research CSS */
+#wrapper .subject {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+}
+
+#wrapper .subject h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+
+#wrapper .subject p {
+    margin-top: 1em;
+}
+
+#wrapper .subject ul {
+    padding:1em;
+}
+
+table {
+    border: 2px solid var(--middle-color);
+    border-spacing: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid var(--middle-color);
+    padding: 8px;
+    text-align: left;
+}
+
+.arabic table th, table td{
+    text-align: right;
+}
+
+table th {
+    background-color: var(--surface-color);
+    color: var(--light-color);
+}
+
+@media all and (max-width: 550px){
+    #wrapper {
+        width: 90%;
+    }
+
+    table th, table td {
+        text-align: center;
+    }
+
+}
+
+/* Quiz CSS */
+.quiz {
+    padding-bottom:2em;
+}
+
+#wrapper #result {
+    display: none;
+}
+
+#wrapper .question , #wrapper #result {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+}
+
+.question h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.quiz #submit-btn , .quiz #retake-btn {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+}
+
+.quiz #result{
+    display:flex;
+    justify-content: space-evenly;
 }
