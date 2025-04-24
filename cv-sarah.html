@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sarah Johnson's professional CV">
+    <meta name="theme-color" content="#2563eb">
+    <title>Sarah Johnson - CV</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout">
+        <header>
+            <div class="logo">
+                <a href="index.html">Cv.</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="cv-switcher">
+                        <a href="cv-anthony.html">CV</a>
+                        <div class="cv-dropdown">
+                            <a href="cv-anthony.html">
+                                <span class="name">Anthony Smith</span>
+                                <span class="role">Web Developer</span>
+                            </a>
+                            <a href="cv-sarah.html" class="active">
+                                <span class="name">Sarah Johnson</span>
+                                <span class="role">UX/UI Designer</span>
+                            </a>
+                            <a href="cv-michael.html">
+                                <span class="name">Michael Brown</span>
+                                <span class="role">Software Engineer</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="arabic.html">Arabic</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section class="cv-container">
+                <div class="personal-info">
+                    <h2><i class="fas fa-user"></i> Personal Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h3>Sarah Johnson</h3>
+                            <p>UX/UI Designer</p>
+                            <p><i class="fas fa-envelope"></i> sarah@example.com</p>
+                            <p><i class="fas fa-phone"></i> +1 234 567 891</p>
+                            <p><i class="fas fa-location-dot"></i> New York, USA</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Professional Summary</h3>
+                            <p>Passionate UX/UI designer with 4+ years of experience creating intuitive and engaging digital experiences. Specializing in user research, wireframing, and prototyping.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience">
+                    <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>Senior UX Designer</h3>
+                            <p class="company">Design Studio NYC</p>
+                            <p class="date">2021 - Present</p>
+                            <ul>
+                                <li>Led UX research and design for enterprise applications</li>
+                                <li>Created comprehensive design systems</li>
+                                <li>Conducted user testing and feedback sessions</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>UI Designer</h3>
+                            <p class="company">Creative Agency</p>
+                            <p class="date">2019 - 2021</p>
+                            <ul>
+                                <li>Designed mobile and web interfaces</li>
+                                <li>Created interactive prototypes</li>
+                                <li>Collaborated with development teams</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>Master of Fine Arts in Digital Design</h3>
+                            <p class="school">New York University</p>
+                            <p class="date">2017 - 2019</p>
+                            <p>Focus on User Experience Design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <h2><i class="fas fa-star"></i> Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Design Skills</h3>
+                            <ul>
+                                <li>User Research</li>
+                                <li>Wireframing</li>
+                                <li>Prototyping</li>
+                                <li>Visual Design</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Tools & Software</h3>
+                            <ul>
+                                <li>Figma & Sketch</li>
+                                <li>Adobe Creative Suite</li>
+                                <li>InVision & Marvel</li>
+                                <li>Miro & FigJam</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="cv-navigation">
+            <a href="cv-anthony.html" class="prev-cv">
+                <i class="fas fa-arrow-left"></i> Previous CV
+            </a>
+            <a href="cv-michael.html" class="next-cv">
+                Next CV <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <p class="footer-tech">© 2024 My Website</p>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const nav = document.querySelector('nav');
+        const cvSwitcher = document.querySelector('.cv-switcher');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            const navUl = nav.querySelector('ul');
+            if (navUl) {
+                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+            }
+        });
+
+        // CV Switcher functionality
+        cvSwitcher.addEventListener('click', (e) => {
+            e.preventDefault();
+            cvSwitcher.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                nav.classList.remove('active');
+                const navUl = nav.querySelector('ul');
+                if (navUl) {
+                    navUl.style.display = 'none';
+                }
+                cvSwitcher.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html> 
