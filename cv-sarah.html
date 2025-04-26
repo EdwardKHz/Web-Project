@@ -154,38 +154,6 @@
             <p class="footer-tech">© 2024 My Website</p>
         </footer>
     </div>
-
-    <script>
-        // Mobile menu toggle functionality
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const nav = document.querySelector('nav');
-        const cvSwitcher = document.querySelector('.cv-switcher');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            const navUl = nav.querySelector('ul');
-            if (navUl) {
-                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
-            }
-        });
-
-        // CV Switcher functionality
-        cvSwitcher.addEventListener('click', (e) => {
-            e.preventDefault();
-            cvSwitcher.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                nav.classList.remove('active');
-                const navUl = nav.querySelector('ul');
-                if (navUl) {
-                    navUl.style.display = 'none';
-                }
-                cvSwitcher.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="js/common.js"></script>
 </body>
-</html> 
+</html>

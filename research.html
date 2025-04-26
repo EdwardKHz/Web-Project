@@ -127,30 +127,7 @@
                 </div>
         <p class="footer-tech">© 2024 My Website</p>
         </footer>
-    <script>
-            // Mobile menu toggle functionality
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const nav = document.querySelector('nav');
-
-            mobileMenuToggle.addEventListener('click', () => {
-                nav.classList.toggle('active');
-                const navUl = nav.querySelector('ul');
-                if (navUl) {
-                    navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
-                }
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                    nav.classList.remove('active');
-                    const navUl = nav.querySelector('ul');
-                    if (navUl) {
-                        navUl.style.display = 'none';
-                    }
-                }
-        });
-    </script>
-        
+    </div>
+    <script src="js/common.js"></script>
 </body>
-</html> 
+</html>

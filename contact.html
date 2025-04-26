@@ -125,31 +125,8 @@
             <p class="footer-tech">Built with modern web technologies</p>
         </footer>
     </div>
-
+    <script src="js/common.js"></script>
     <script>
-        // Mobile menu toggle functionality
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const nav = document.querySelector('nav');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            const navUl = nav.querySelector('ul');
-            if (navUl) {
-                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
-            }
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                nav.classList.remove('active');
-                const navUl = nav.querySelector('ul');
-                if (navUl) {
-                    navUl.style.display = 'none';
-                }
-            }
-        });
-
         // Form validation
         const contactForm = document.getElementById('contactForm');
         const nameInput = document.getElementById('name');
@@ -223,4 +200,4 @@
         });
     </script>
 </body>
-</html> 
+</html>

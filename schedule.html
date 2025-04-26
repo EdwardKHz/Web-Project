@@ -221,47 +221,6 @@
             <p class="footer-tech">Built with modern web technologies</p>
         </footer>
     </div>
-
-    <script>
-        // Sidebar toggle functionality
-        const sidebarToggle = document.getElementById('sidebarToggle');
-        const sidebar = document.getElementById('sidebar');
-        const mainContent = document.getElementById('mainContent');
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const nav = document.querySelector('nav');
-
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-            mainContent.classList.toggle('expanded');
-        });
-
-        // Mobile menu toggle functionality
-        mobileMenuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            const navUl = nav.querySelector('ul');
-            if (navUl) {
-                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
-            }
-        });
-
-        // Schedule Switcher functionality
-        const scheduleSwitcher = document.querySelector('.schedule-switcher');
-        scheduleSwitcher.addEventListener('click', (e) => {
-            e.preventDefault();
-            scheduleSwitcher.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                nav.classList.remove('active');
-                const navUl = nav.querySelector('ul');
-                if (navUl) {
-                    navUl.style.display = 'none';
-                }
-                scheduleSwitcher.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="js/common.js"></script>
 </body>
-</html> 
+</html>
