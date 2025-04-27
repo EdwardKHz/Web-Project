@@ -167,11 +167,11 @@ nav ul li a.active {
 /* Main Content Styles */
 .main-content {
     flex: 1;
-    margin-left: var(--sidebar-width);
-    margin-top: 100px;
+    margin: 100px auto 0;
     padding: 2rem;
-    transition: margin-left var(--transition-speed) ease;
-    width: auto;
+    transition: margin var(--transition-speed) ease;
+    width: 100%;
+    max-width: 1200px;
 }
 
 section {
@@ -377,7 +377,7 @@ footer {
     }
 
     .main-content {
-        margin-left: 0;
+        margin: 100px auto 0;
     }
 }
 
