@@ -815,7 +815,7 @@ table th {
     align-items: center;
     padding: 2rem;
     margin: 2rem 0;
-    background-color: #f8f9fa;
+    background-color: var(--dark-color);
     border-radius: 8px;
 }
 
@@ -844,8 +844,12 @@ table th {
 
 .cv-navigation .prev-cv {
     margin-right: auto;
+    background: var(--primary-color);
+    color:white;
 }
 
 .cv-navigation .next-cv {
     margin-left: auto;
+    background: var(--primary-color);
+    color:white;
 }
