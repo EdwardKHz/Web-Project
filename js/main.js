@@ -27,11 +27,62 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Function to handle CV dropdown toggle
+    function handleCVDropdown(e) {
+        // Only prevent default if clicking the switcher itself, not the links
+        if (e.target === cvSwitcher || e.target === cvSwitcher.querySelector('a')) {
+            e.preventDefault();
+            cvSwitcher.classList.toggle('active');
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function closeDropdown(event) {
+                if (!cvSwitcher.contains(event.target)) {
+                    cvSwitcher.classList.remove('active');
+                    document.removeEventListener('click', closeDropdown);
+                }
+            });
+        }
+    }
+
+    // Function to handle schedule dropdown toggle
+    function handleScheduleDropdown(e) {
+        // Only prevent default if clicking the switcher itself, not the links
+        if (e.target === scheduleSwitcher || e.target === scheduleSwitcher.querySelector('a')) {
+            e.preventDefault();
+            scheduleSwitcher.classList.toggle('active');
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function closeDropdown(event) {
+                if (!scheduleSwitcher.contains(event.target)) {
+                    scheduleSwitcher.classList.remove('active');
+                    document.removeEventListener('click', closeDropdown);
+                }
+            });
+        }
+    }
+
     // Sidebar toggle
     if (sidebarToggle && sidebar) {
-        sidebarToggle.addEventListener('click', () => {
+        const layout = document.querySelector('.layout');
+        sidebarToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent event from bubbling up
             sidebar.classList.toggle('active');
-            mainContent.classList.toggle('expanded');
+            // Only add with-sidebar class on larger screens
+            if (window.innerWidth > 1024) {
+                layout.classList.toggle('with-sidebar');
+            }
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (sidebar.classList.contains('active') && 
+                !sidebar.contains(e.target) && 
+                !sidebarToggle.contains(e.target)) {
+                sidebar.classList.remove('active');
+                if (window.innerWidth > 1024) {
+                    layout.classList.remove('with-sidebar');
+                }
+            }
         });
     }
 
@@ -67,38 +118,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Schedule switcher functionality
     if (scheduleSwitcher) {
-        scheduleSwitcher.addEventListener('click', (e) => {
-            // Only prevent default if clicking the switcher itself, not the links
-            if (e.target === scheduleSwitcher || e.target === scheduleSwitcher.querySelector('a')) {
-                e.preventDefault();
-                scheduleSwitcher.classList.toggle('active');
-            }
-        });
-
-        // Close schedule switcher when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!scheduleSwitcher.contains(e.target)) {
-                scheduleSwitcher.classList.remove('active');
-            }
-        });
+        scheduleSwitcher.addEventListener('click', handleScheduleDropdown);
     }
 
     // CV switcher functionality
     if (cvSwitcher) {
-        cvSwitcher.addEventListener('click', (e) => {
-            // Only prevent default if clicking the switcher itself, not the links
-            if (e.target === cvSwitcher || e.target === cvSwitcher.querySelector('a')) {
-                e.preventDefault();
-                cvSwitcher.classList.toggle('active');
-            }
-        });
-
-        // Close CV switcher when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!cvSwitcher.contains(e.target)) {
-                cvSwitcher.classList.remove('active');
-            }
-        });
+        cvSwitcher.addEventListener('click', handleCVDropdown);
     }
 
     // Quiz functionality
