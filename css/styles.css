@@ -3,7 +3,6 @@
     --primary-color: #ff6b6b;
     --middle-color: #ffa254;
     --secondary-color: #ffd93d;
-    --accent-color: #60a5fa;
     --dark-color: #1a1a1a;
     --light-color: #ffffff;
     --surface-color: rgba(255, 255, 255, 0.1);
@@ -44,7 +43,6 @@ a {
     display: flex;
     flex-direction: column;
     padding-left: 0;
-    transition: padding-left 0.3s ease;
 }
 
 .layout.with-sidebar {
@@ -63,7 +61,6 @@ header {
     align-items: center;
     z-index: 100;
     background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
 }
 
 .logo a {
@@ -136,7 +133,6 @@ nav ul li a.active {
     display: none;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -152,8 +148,6 @@ nav ul li a.active {
 .sidebar {
     width: var(--sidebar-width);
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-right: 1px solid var(--glass-border);
     position: fixed;
     top: 105px;
@@ -163,7 +157,6 @@ nav ul li a.active {
     overflow-y: auto;
     box-shadow: var(--glass-shadow);
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
 }
 
 .sidebar.active {
@@ -176,7 +169,6 @@ nav ul li a.active {
     padding: 2rem;
     width: 100%;
     max-width: 1200px;
-    transition: all 0.3s ease;
     position: relative;
     z-index: 1;
 }
@@ -366,7 +358,6 @@ section h2 {
     background: var(--surface-color);
     border-radius: 1rem;
     box-shadow: var(--card-shadow);
-    backdrop-filter: blur(10px);
 }
 
 .info-grid {
@@ -555,7 +546,6 @@ table th {
     background: var(--glass-bg);
     border-radius: var(--border-radius);
     box-shadow: var(--glass-shadow);
-    backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
 }
 
@@ -648,10 +638,8 @@ table th {
     padding: 0.5rem;
     margin-top: 0.5rem;
     z-index: 1000;
-    backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
 .schedule-dropdown {
@@ -666,7 +654,6 @@ table th {
     padding: 0.5rem;
     margin-top: 0.5rem;
     z-index: 1000;
-    backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     opacity: 0;
 }
@@ -851,8 +838,7 @@ footer {
         bottom: 0;
         width: 280px;
         background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+
         border-right: 1px solid var(--glass-border);
         box-shadow: var(--glass-shadow);
     }
@@ -918,7 +904,7 @@ footer {
         padding: 1rem;
         z-index: 1000;
         height: auto;
-        backdrop-filter: blur(10px);
+
     }
     nav.active {
         display: block;
@@ -983,7 +969,6 @@ footer {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
     }
     .schedule-table table {
         min-width: 600px;
