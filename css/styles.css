@@ -957,17 +957,21 @@ table th {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 50vh;
   margin: 0;
+  margin-bottom: 20px;
   padding: 0;
   box-sizing: border-box;
 }
 
 .card-list .card-item {
   list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
 .card-list .card-item .card-link {
+  user-select: none;
   width: 400px;
   display: block;
   background: #fff;
@@ -983,7 +987,7 @@ table th {
   border-color: #5372f0;
 }
 
-.card-list .card-link .card-image {
+.card-list .card-link .card-video {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
@@ -1023,4 +1027,16 @@ table th {
 .card-list .card-link:hover .card-button {
   color: #fff;
   background: #5372f0;
+}
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+video::-moz-fullscreen-button {
+  display: none !important;
+}
+
+video::-ms-fullscreen-button {
+  display: none !important;
 }
