@@ -111,7 +111,7 @@
                         <div class="error-message" id="messageError"></div>
                     </div>
 
-                    <button type="submit" class="submit-btn">
+                    <button type="submit" class="submit-btn" name="submit">
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
@@ -160,15 +160,16 @@
         </footer>
     </div>
     <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST["submit"])) {
+            echo"ehfsigsifgsifgsfsifgsifsgfi";
             $name = htmlspecialchars($_POST['name']);
-            $email = htmlspecialchars($_POST['email']);
+            $Email = htmlspecialchars($_POST['email']);
             $subject = htmlspecialchars($_POST['subject']);
             $message = htmlspecialchars($_POST['message']);
-            $conn = mysqli_connect("localhost", "root", "");
-            mysqli_query($conn, "use WebProject");
-            mysqli_query($conn, "INSERT INTO contact VALUES ('$name, '$email', '$subject', '$message')");
-            
+            $conn = mysqli_connect("localhost", "root", "", "WebProject");
+            $sql = "INSERT INTO contact VALUES ('$name', '$Email', '$subject', '$message')";
+            mysqli_query($conn, $sql);
+            mysqli_close($conn);
         }
     ?>
 

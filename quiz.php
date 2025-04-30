@@ -82,6 +82,7 @@
         $ip = $_SERVER['REMOTE_ADDR'];
         mysqli_query($conn, "use WebProject");
         mysqli_query($conn, "INSERT INTO quiz_results VALUES ('$ip', '$result')");
+        mysqli_close($conn);
     echo"
     <div id=\"result\" style=\"display:block;\"><div>Your Score is : $result/20</div>
         <div><input type=\"submit\" value=\"Retake Quiz\" id=\"retake-btn\" name=\"retake\"></div>    
