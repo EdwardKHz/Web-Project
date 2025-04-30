@@ -21,7 +21,7 @@
 
         <header>
             <div class="logo">
-                <a href="contact.html">Contact Us.</a>
+                <a href="contact.php">Contact Us.</a>
             </div>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
@@ -67,7 +67,7 @@
                     <li><a href="media.html">Media</a></li>
                     <li><a href="quiz.html">Quiz</a></li>
                     <li><a href="arabic.html">Arabic</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="contact.php" class="active">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -86,7 +86,7 @@
         <main class="main-content with-sidebar" id="mainContent">
             <section id="contact-form">
                 <h2><i class="fas fa-envelope"></i> Send Us a Message</h2>
-                <form id="contactForm" class="contact-form">
+                <form id="contactForm" class="contact-form" method="POST" action="">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
@@ -159,6 +159,18 @@
             <p class="footer-tech">Built with modern web technologies</p>
         </footer>
     </div>
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = htmlspecialchars($_POST['name']);
+            $email = htmlspecialchars($_POST['email']);
+            $subject = htmlspecialchars($_POST['subject']);
+            $message = htmlspecialchars($_POST['message']);
+            $conn = mysqli_connect("localhost", "root", "");
+            mysqli_query($conn, "use WebProject");
+            mysqli_query($conn, "INSERT INTO contact VALUES ('$name, '$email', '$subject', '$message')");
+            
+        }
+    ?>
 
     <script src="js/main.js"></script>
 </body>

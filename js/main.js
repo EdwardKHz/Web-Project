@@ -237,7 +237,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Here you would typically send the form data to a server
             alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
         });
     }
 
