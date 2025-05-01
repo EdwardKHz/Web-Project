@@ -1,3 +1,49 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Initialize variables
+$message_sent = false;
+$error_message = '';
+
+if(isset($_POST["submit"])) {
+    try {
+        // Get form data
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+        
+        // Connect to database
+        $conn = new mysqli('localhost', 'root', '', 'WebProject');
+        
+        // Check connection
+        if ($conn->connect_error) {
+            throw new Exception("Connection failed: " . $conn->connect_error);
+        }
+        
+        // Prepare statement
+        $stmt = $conn->prepare("INSERT INTO contact (name, email, subject, message) VALUES (?, ?, ?, ?)");
+        if (!$stmt) {
+            throw new Exception("Prepare failed: " . $conn->error);
+        }
+        
+        // Bind parameters and execute
+        $stmt->bind_param("ssss", $name, $email, $subject, $message);
+        if ($stmt->execute()) {
+            $message_sent = true;
+        } else {
+            throw new Exception("Error saving message: " . $stmt->error);
+        }
+        
+        $stmt->close();
+        $conn->close();
+        
+    } catch (Exception $e) {
+        $error_message = $e->getMessage();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,32 +132,43 @@
         <main class="main-content with-sidebar" id="mainContent">
             <section id="contact-form">
                 <h2><i class="fas fa-envelope"></i> Send Us a Message</h2>
-                <form id="contactForm" class="contact-form" method="POST">
+                
+                <?php if ($message_sent): ?>
+                    <div class="success-message" style="background-color: #d4edda; color: #155724; padding: 20px; margin: 20px; border-radius: 5px; text-align: center; font-size: 1.2em; border: 2px solid #155724;">
+                        <i class="fas fa-check-circle" style="font-size: 2em; margin-bottom: 10px;"></i><br>
+                        <strong>Message Sent Successfully!</strong><br>
+                        Thank you for your message! We will get back to you soon.
+                    </div>
+                <?php endif; ?>
+                
+                <?php if ($error_message): ?>
+                    <div class="error-message" style="background-color: #f8d7da; color: #721c24; padding: 10px; margin: 10px; border-radius: 5px;">
+                        <?php echo htmlspecialchars($error_message); ?>
+                    </div>
+                <?php endif; ?>
+
+                <form id="contactForm" class="contact-form" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
-                        <div class="error-message" id="nameError"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" required>
-                        <div class="error-message" id="emailError"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="subject">Subject</label>
                         <input type="text" id="subject" name="subject" required>
-                        <div class="error-message" id="subjectError"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
-                        <div class="error-message" id="messageError"></div>
                     </div>
 
-                    <button type="submit" class="submit-btn" name="submit">
+                    <button type="submit" class="submit-btn" name="submit" value="1">
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
@@ -159,19 +216,6 @@
             <p class="footer-tech">Built with modern web technologies</p>
         </footer>
     </div>
-    <?php
-        if (isset($_POST["submit"])) {
-            echo"ehfsigsifgsifgsfsifgsifsgfi";
-            $name = htmlspecialchars($_POST['name']);
-            $Email = htmlspecialchars($_POST['email']);
-            $subject = htmlspecialchars($_POST['subject']);
-            $message = htmlspecialchars($_POST['message']);
-            $conn = mysqli_connect("localhost", "root", "", "WebProject");
-            $sql = "INSERT INTO contact VALUES ('$name', '$Email', '$subject', '$message')";
-            mysqli_query($conn, $sql);
-            mysqli_close($conn);
-        }
-    ?>
 
     <script src="js/main.js"></script>
 </body>
