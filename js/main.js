@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Contact form validation
-    const contactForm = document.getElementById('contact-form');
+    const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -235,8 +235,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Here you would typically send the form data to a server
             alert('Thank you for your message! We will get back to you soon.');
+            contactForm.removeEventListener('submit', arguments.callee);
+            contactForm.submit();
         });
     }
 

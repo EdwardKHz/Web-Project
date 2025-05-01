@@ -86,7 +86,7 @@
         <main class="main-content with-sidebar" id="mainContent">
             <section id="contact-form">
                 <h2><i class="fas fa-envelope"></i> Send Us a Message</h2>
-                <form id="contactForm" class="contact-form" method="POST" action="">
+                <form id="contactForm" class="contact-form" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
