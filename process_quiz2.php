@@ -21,16 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Connect to database and store result
     $conn = mysqli_connect("localhost", "root", "");
-    mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS WebProject");
     mysqli_select_db($conn, "WebProject");
-    
-    // Create quiz2_results table if it doesn't exist
-    $create_table = "CREATE TABLE IF NOT EXISTS quiz2_results (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        ip_address VARCHAR(45),
-        score INT,
-        submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )";
     $ip = $_SERVER['REMOTE_ADDR'];
     $insert_query = "INSERT INTO quiz2_results (ip_address, score) VALUES ('$ip', '$result')";
     mysqli_close($conn);
