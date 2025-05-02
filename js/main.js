@@ -1,6 +1,4 @@
-// Common functionality for all pages
 document.addEventListener('DOMContentLoaded', function() {
-    // Common elements
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.getElementById('mainContent');
@@ -11,12 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const cvSwitcher = document.querySelector('.cv-switcher');
     const cvDropdown = document.querySelector('.cv-dropdown');
 
-    // Function to check if we're on mobile
     function isMobileScreen() {
         return window.innerWidth <= 768;
     }
 
-    // Function to handle mobile menu toggle
     function handleMobileMenu() {
         if (isMobileScreen()) {
             nav.classList.toggle('active');
@@ -27,14 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Function to handle CV dropdown toggle
     function handleCVDropdown(e) {
-        // Only prevent default if clicking the switcher itself, not the links
         if (e.target === cvSwitcher || e.target === cvSwitcher.querySelector('a')) {
             e.preventDefault();
             cvSwitcher.classList.toggle('active');
             
-            // Close dropdown when clicking outside
             document.addEventListener('click', function closeDropdown(event) {
                 if (!cvSwitcher.contains(event.target)) {
                     cvSwitcher.classList.remove('active');
@@ -44,14 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Function to handle schedule dropdown toggle
     function handleScheduleDropdown(e) {
-        // Only prevent default if clicking the switcher itself, not the links
         if (e.target === scheduleSwitcher || e.target === scheduleSwitcher.querySelector('a')) {
             e.preventDefault();
             scheduleSwitcher.classList.toggle('active');
             
-            // Close dropdown when clicking outside
             document.addEventListener('click', function closeDropdown(event) {
                 if (!scheduleSwitcher.contains(event.target)) {
                     scheduleSwitcher.classList.remove('active');
@@ -65,15 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (sidebarToggle && sidebar) {
         const layout = document.querySelector('.layout');
         sidebarToggle.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent event from bubbling up
+            e.stopPropagation();
             sidebar.classList.toggle('active');
-            // Only add with-sidebar class on larger screens
             if (window.innerWidth > 1024) {
                 layout.classList.toggle('with-sidebar');
             }
         });
-
-        // Close sidebar when clicking outside
         document.addEventListener('click', (e) => {
             if (sidebar.classList.contains('active') && 
                 !sidebar.contains(e.target) && 
@@ -85,11 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    // Add click handler for mobile menu toggle
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent event from bubbling up
+            e.stopPropagation();
             handleMobileMenu();
         });
     }
@@ -116,12 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Schedule switcher functionality
     if (scheduleSwitcher) {
         scheduleSwitcher.addEventListener('click', handleScheduleDropdown);
     }
-
-    // CV switcher functionality
     if (cvSwitcher) {
         cvSwitcher.addEventListener('click', handleCVDropdown);
     }
@@ -204,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo(0, 0);
     }
 
-    // Add event listeners for quiz buttons
     const submitBtn = document.getElementById('submit1-btn');
     const retakeBtn = document.getElementById('retake1-btn');
 
@@ -234,8 +215,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Please enter a valid email address');
                 return false;
             }
-            
-            // Allow form to submit if validation passes
             return true;
         });
     }

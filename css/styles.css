@@ -599,29 +599,6 @@ table th {
   display: block;
 }
 
-.submit-btn {
-  background: var(--primary-color);
-  color: var(--light-color);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0 auto;
-}
-
-.submit-btn:hover {
-  box-shadow: var(--hover-shadow);
-}
-
-.submit-btn i {
-  font-size: 1.1rem;
-}
-
 /* 14. Components */
 .cv-switcher,
 .schedule-switcher {
@@ -757,7 +734,7 @@ table th {
   color: var(--primary-color);
 }
 
-.quiz #submit1-btn,
+.quiz #submit1-btn,.quiz #submit-btn,.quiz #retake-btn,
 .quiz #retake1-btn {
   background: var(--primary-color);
   color: white;

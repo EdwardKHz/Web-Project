@@ -11,7 +11,6 @@ if(isset($_POST["submit"])) {
     $message = $_POST['message'];
     $conn = new mysqli('localhost', 'root', '', 'WebProject');
     $stmt = $conn->prepare("INSERT INTO contact (fname, email, subject, message) VALUES (?, ?, ?, ?)");
-    // Bind parameters and execute
     $stmt->bind_param("ssss", $name, $email, $subject, $message);
     if ($stmt->execute())
         $message_sent = true;
