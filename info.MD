@@ -2,11 +2,6 @@ create database WebProject;
 
 use WebProject;
 
-create table quiz_Results(
-    ip varchar(32),
-    result int
-);
-
 create table contact(
     Fname varchar(32),
     Email varchar(254),

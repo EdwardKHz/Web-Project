@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_select_db($conn, "WebProject");
     $ip = $_SERVER['REMOTE_ADDR'];
     $insert_query = "INSERT INTO quiz2_results (ip_address, score) VALUES ('$ip', '$result')";
+    mysqli_query($conn, $insert_query);
     mysqli_close($conn);
     
 }

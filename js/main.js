@@ -205,8 +205,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Add event listeners for quiz buttons
-    const submitBtn = document.getElementById('submit-btn');
-    const retakeBtn = document.getElementById('retake-btn');
+    const submitBtn = document.getElementById('submit1-btn');
+    const retakeBtn = document.getElementById('retake1-btn');
 
     if(submitBtn) {
         submitBtn.addEventListener('click', calculate);

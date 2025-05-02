@@ -10,7 +10,7 @@ if(isset($_POST["submit"])) {
     $subject = $_POST['subject'];
     $message = $_POST['message'];
     $conn = new mysqli('localhost', 'root', '', 'WebProject');
-    $stmt = $conn->prepare("INSERT INTO contact (name, email, subject, message) VALUES (?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO contact (fname, email, subject, message) VALUES (?, ?, ?, ?)");
     // Bind parameters and execute
     $stmt->bind_param("ssss", $name, $email, $subject, $message);
     if ($stmt->execute())
