@@ -3,13 +3,13 @@ create database WebProject;
 use WebProject;
 
 create table quiz_Results(
-    ip nvarchar(32),
+    ip varchar(32),
     result int
 );
 
 create table contact(
-    Fname nvarchar(32),
-    Email nvarchar(254),
+    Fname varchar(32),
+    Email varchar(254),
     Subject text,
     Message text
 );
