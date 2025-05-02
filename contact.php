@@ -112,6 +112,7 @@ if(isset($_POST["submit"])) {
                     </li>
                     <li><a href="media.html">Media</a></li>
                     <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="quiz2.php">Quiz 2</a></li>
                     <li><a href="arabic.html">Arabic</a></li>
                     <li><a href="contact.php" class="active">Contact</a></li>
                 </ul>
