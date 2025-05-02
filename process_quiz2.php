@@ -233,5 +233,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <p class="footer-tech">© 2024 My Website</p>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html> 

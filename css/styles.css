@@ -600,7 +600,6 @@ table th {
 }
 
 .submit-btn {
-  /* Replace gradient with primary color */
   background: var(--primary-color);
   color: var(--light-color);
   border: none;
@@ -758,9 +757,8 @@ table th {
   color: var(--primary-color);
 }
 
-.quiz #submit-btn,
-.quiz #retake-btn {
-  /* Replace gradient with primary color */
+.quiz #submit1-btn,
+.quiz #retake1-btn {
   background: var(--primary-color);
   color: white;
   border: none;
