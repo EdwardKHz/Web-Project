@@ -21,37 +21,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Connect to database and store result
     $conn = mysqli_connect("localhost", "root", "");
-    if ($conn) {
-        // Create database if it doesn't exist
-        mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS WebProject");
-        
-        // Select the database
-        mysqli_select_db($conn, "WebProject");
-        
-        // Create quiz2_results table if it doesn't exist
-        $create_table = "CREATE TABLE IF NOT EXISTS quiz2_results (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            ip_address VARCHAR(45),
-            score INT,
-            submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )";
-        
-        if (!mysqli_query($conn, $create_table)) {
-            error_log("Error creating table: " . mysqli_error($conn));
-        }
-        
-        // Store the result
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $insert_query = "INSERT INTO quiz2_results (ip_address, score) VALUES ('$ip', '$result')";
-        
-        if (!mysqli_query($conn, $insert_query)) {
-            error_log("Error inserting result: " . mysqli_error($conn));
-        }
-        
-        mysqli_close($conn);
-    } else {
-        error_log("Database connection failed: " . mysqli_connect_error());
-    }
+    mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS WebProject");
+    mysqli_select_db($conn, "WebProject");
+    
+    // Create quiz2_results table if it doesn't exist
+    $create_table = "CREATE TABLE IF NOT EXISTS quiz2_results (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        ip_address VARCHAR(45),
+        score INT,
+        submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )";
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $insert_query = "INSERT INTO quiz2_results (ip_address, score) VALUES ('$ip', '$result')";
+    mysqli_close($conn);
+    
 }
 ?>
 <!DOCTYPE html>

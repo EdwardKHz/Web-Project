@@ -1,47 +1,22 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-// Initialize variables
 $message_sent = false;
 $error_message = '';
 
 if(isset($_POST["submit"])) {
-    try {
-        // Get form data
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $subject = $_POST['subject'];
-        $message = $_POST['message'];
-        
-        // Connect to database
-        $conn = new mysqli('localhost', 'root', '', 'WebProject');
-        
-        // Check connection
-        if ($conn->connect_error) {
-            throw new Exception("Connection failed: " . $conn->connect_error);
-        }
-        
-        // Prepare statement
-        $stmt = $conn->prepare("INSERT INTO contact (name, email, subject, message) VALUES (?, ?, ?, ?)");
-        if (!$stmt) {
-            throw new Exception("Prepare failed: " . $conn->error);
-        }
-        
-        // Bind parameters and execute
-        $stmt->bind_param("ssss", $name, $email, $subject, $message);
-        if ($stmt->execute()) {
-            $message_sent = true;
-        } else {
-            throw new Exception("Error saving message: " . $stmt->error);
-        }
-        
-        $stmt->close();
-        $conn->close();
-        
-    } catch (Exception $e) {
-        $error_message = $e->getMessage();
-    }
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $conn = new mysqli('localhost', 'root', '', 'WebProject');
+    $stmt = $conn->prepare("INSERT INTO contact (name, email, subject, message) VALUES (?, ?, ?, ?)");
+    // Bind parameters and execute
+    $stmt->bind_param("ssss", $name, $email, $subject, $message);
+    if ($stmt->execute())
+        $message_sent = true;
+    $stmt->close();
+    $conn->close();
 }
 ?>
 <!DOCTYPE html>
