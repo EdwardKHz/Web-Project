@@ -1,3 +1,7 @@
+create database WebProject;
+
+use WebProject;
+
 create table quiz_Results(
     ip nvarchar(32),
     result int
@@ -11,8 +15,8 @@ create table contact(
 );
 
 create table quiz2_results (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        ip_address VARCHAR(45),
-        score INT,
-        submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )";
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip_address VARCHAR(45),
+    score INT,
+    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
