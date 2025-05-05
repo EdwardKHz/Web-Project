@@ -235,7 +235,11 @@ section h2 {
   padding: 4rem 2rem;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
   background-image: url("images/background.jpg");
+=======
+  background-image: url("css/images/background.jpg");
+>>>>>>> 03c0b3198fda5d0941e5d387ce1d73c7c4403be8
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
