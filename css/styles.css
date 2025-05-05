@@ -196,7 +196,7 @@ nav ul li a.active {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  cursor:poi
+  cursor: poi;
 }
 
 /* 7. Main Content */
@@ -343,7 +343,6 @@ section h2 {
   font-size: 1.1rem;
   line-height: 1.8;
 }
-
 
 /* 10. CV & Timeline */
 .cv-container {
@@ -623,7 +622,8 @@ table th {
   position: relative;
 }
 
-.cv-dropdown , .schedule-dropdown {
+.cv-dropdown,
+.schedule-dropdown {
   display: none;
   position: absolute;
   top: 100%;
@@ -706,7 +706,7 @@ table th {
 .prev-cv {
   margin-right: auto;
 }
-.prev-schedule{
+.prev-schedule {
   margin-left: var(--sidebar-width);
 }
 
@@ -738,7 +738,9 @@ table th {
   color: var(--primary-color);
 }
 
-.quiz #submit1-btn,.quiz #submit-btn,.quiz #retake-btn,
+.quiz #submit1-btn,
+.quiz #submit-btn,
+.quiz #retake-btn,
 .quiz #retake1-btn {
   background: var(--primary-color);
   color: white;
@@ -835,7 +837,7 @@ footer {
     width: 100%;
     max-width: 1200px;
   }
-  .prev-schedule{
+  .prev-schedule {
     margin-left: 0;
   }
 }
@@ -853,7 +855,6 @@ footer {
     margin-left: var(--sidebar-width);
     max-width: calc(1200px - var(--sidebar-width));
     width: calc(100% - var(--sidebar-width));
-
   }
 }
 
@@ -1035,9 +1036,9 @@ footer {
     height: 36px;
     font-size: 1.25rem;
   }
-  .sidebar-toggle{
+  .sidebar-toggle {
     font-size: 0.7rem;
-    top:10px;
+    top: 10px;
   }
   .logo a {
     font-size: 1.5rem;
@@ -1063,6 +1064,7 @@ footer {
 }
 
 .videos {
+  background-color: var(--dark-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1071,6 +1073,10 @@ footer {
   margin-bottom: 20px;
   padding: 0;
   box-sizing: border-box;
+}
+
+.card-item {
+  height: 400px;
 }
 
 .card-list .card-item {
@@ -1083,7 +1089,7 @@ footer {
   user-select: none;
   width: 400px;
   display: block;
-  background: #fff;
+  background: var(--surface-color);
   padding: 18px;
   border-radius: 12px;
   text-decoration: none;
@@ -1103,7 +1109,7 @@ footer {
   border-radius: 10px;
 }
 
-.card-list .card-link .badge {
+.card-list .card-link {
   color: #5372f0;
   padding: 8px 16px;
   font-weight: 500;
@@ -1114,10 +1120,16 @@ footer {
   border-radius: 50px;
 }
 
-.card-list .card-link .card-title {
+.card-list .card-link {
   font-size: 1.19rem;
   font-weight: 600;
   color: #1a1a1a;
+}
+
+.card-title {
+  font-size: 1.19rem;
+  font-weight: 600;
+  color: white;
 }
 
 .card-list .card-link .card-button {
@@ -1148,4 +1160,25 @@ video::-moz-fullscreen-button {
 
 video::-ms-fullscreen-button {
   display: none !important;
+}
+
+.badge {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 16px 0 18px;
+  width: fit-content;
+  border-radius: 50px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: green;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: var(--primary-color) !important;
 }
