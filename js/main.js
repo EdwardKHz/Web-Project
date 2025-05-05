@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === cvSwitcher || e.target === cvSwitcher.querySelector('a')) {
             e.preventDefault();
             cvSwitcher.classList.toggle('active');
-            
+            //close the dropdown if clicked outside
             document.addEventListener('click', function closeDropdown(event) {
                 if (!cvSwitcher.contains(event.target)) {
                     cvSwitcher.classList.remove('active');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === scheduleSwitcher || e.target === scheduleSwitcher.querySelector('a')) {
             e.preventDefault();
             scheduleSwitcher.classList.toggle('active');
-            
+            //close if click outside
             document.addEventListener('click', function closeDropdown(event) {
                 if (!scheduleSwitcher.contains(event.target)) {
                     scheduleSwitcher.classList.remove('active');
@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 layout.classList.toggle('with-sidebar');
             }
         });
+        //close if clicked outside
         document.addEventListener('click', (e) => {
             if (sidebar.classList.contains('active') && 
                 !sidebar.contains(e.target) && 
