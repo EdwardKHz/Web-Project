@@ -853,7 +853,7 @@ footer {
 
   .main-content.with-sidebar {
     margin-left: var(--sidebar-width);
-    max-width: calc(1200px - var(--sidebar-width));
+    max-width: calc(1400px - var(--sidebar-width));
     width: calc(100% - var(--sidebar-width));
   }
 }
