@@ -235,7 +235,7 @@ section h2 {
   padding: 4rem 2rem;
   position: relative;
   overflow: hidden;
-  background-image: url("background.jpg");
+  background-image: url("images/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1062,6 +1062,7 @@ footer {
     font-size: 2rem;
   }
 }
+/*media*/
 
 .videos {
   background-color: var(--dark-color);
@@ -1073,10 +1074,6 @@ footer {
   margin-bottom: 20px;
   padding: 0;
   box-sizing: border-box;
-}
-
-.card-item {
-  height: 400px;
 }
 
 .card-list .card-item {
@@ -1171,11 +1168,6 @@ video::-ms-fullscreen-button {
   margin: 16px 0 18px;
   width: fit-content;
   border-radius: 50px;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  color: green;
 }
 
 .swiper-button-next::after,
