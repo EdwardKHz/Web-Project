@@ -165,16 +165,6 @@ nav ul li a.active {
   transform: translateX(0);
 }
 
-.main-content {
-  flex: 1;
-  margin: 100px auto 0;
-  padding: 2rem;
-  width: 100%;
-  max-width: 1200px;
-  position: relative;
-  z-index: 1;
-}
-
 .main-content.with-sidebar {
   max-width: calc(1200px - var(--sidebar-width));
   width: calc(100% - var(--sidebar-width));
@@ -206,6 +196,7 @@ nav ul li a.active {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor:poi
 }
 
 /* 7. Main Content */
@@ -215,6 +206,8 @@ nav ul li a.active {
   padding: 2rem;
   width: 100%;
   max-width: 1200px;
+  position: relative;
+  z-index: 1;
 }
 
 section {
@@ -350,6 +343,7 @@ section h2 {
   font-size: 1.1rem;
   line-height: 1.8;
 }
+
 
 /* 10. CV & Timeline */
 .cv-container {
@@ -599,29 +593,37 @@ table th {
   display: block;
 }
 
+.submit-btn {
+  /* Replace gradient with primary color */
+  background: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+
+.submit-btn:hover {
+  box-shadow: var(--hover-shadow);
+}
+
+.submit-btn i {
+  font-size: 1.1rem;
+}
+
 /* 14. Components */
 .cv-switcher,
 .schedule-switcher {
   position: relative;
 }
 
-.cv-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--glass-bg);
-  border-radius: var(--border-radius);
-  box-shadow: var(--card-shadow);
-  min-width: 250px;
-  padding: 0.5rem;
-  margin-top: 0.5rem;
-  z-index: 1000;
-  border: 1px solid var(--glass-border);
-  opacity: 0;
-}
-
-.schedule-dropdown {
+.cv-dropdown , .schedule-dropdown {
   display: none;
   position: absolute;
   top: 100%;
@@ -701,9 +703,11 @@ table th {
   gap: 0.5rem;
 }
 
-.prev-cv,
-.prev-schedule {
+.prev-cv {
   margin-right: auto;
+}
+.prev-schedule{
+  margin-left: var(--sidebar-width);
 }
 
 .next-cv,
@@ -831,6 +835,9 @@ footer {
     width: 100%;
     max-width: 1200px;
   }
+  .prev-schedule{
+    margin-left: 0;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -846,6 +853,7 @@ footer {
     margin-left: var(--sidebar-width);
     max-width: calc(1200px - var(--sidebar-width));
     width: calc(100% - var(--sidebar-width));
+
   }
 }
 
@@ -1027,8 +1035,13 @@ footer {
     height: 36px;
     font-size: 1.25rem;
   }
+  .sidebar-toggle{
+    font-size: 0.7rem;
+    top:10px;
+  }
   .logo a {
     font-size: 1.5rem;
+    margin-left: 10px;
   }
   .schedule-table {
     font-size: 0.9rem;
