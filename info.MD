@@ -2,6 +2,8 @@ https://346568.mywebcommunity.org/
 
 
 
+SQL queries:
+
 create database WebProject;
 
 use WebProject;
