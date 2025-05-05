@@ -61,7 +61,7 @@ if(isset($_POST["submit"])) {
                                 <span class="role">Private Security Contractor</span>
                             </a>
                             <a href="cv-edward.html">
-                                <span class="name">Edward Johnson</span>
+                                <span class="name">Edward Khazzoum</span>
                                 <span class="role">Cybersecurity Expert</span>
                             </a>
                         </div>
@@ -70,17 +70,17 @@ if(isset($_POST["submit"])) {
                     <li class="schedule-switcher">
                         <a href="schedule-anthony.html">Schedule</a>
                         <div class="schedule-dropdown">
-                            <a href="schedule-anthony.html" >
-                                <span class="name">anthony Schedule</span>
-                                <span class="role"> computer science</span>
-                            </a>
-                            <a href="schedule-edward.html">
-                                <span class="name"> edward Schedule</span>
-                                <span class="role"> computer science</span>
+                            <a href="schedule-anthony.html">
+                                <span class="name">Anthony's Schedule</span>
+                                <span class="role">Computer Science</span>
                             </a>
                             <a href="schedule-joseph.html">
-                                <span class="name">joseph Schedule</span>
-                                <span class="role">computer science</span>
+                                <span class="name">Joseph's Schedule</span>
+                                <span class="role">Security Operations</span>
+                            </a>
+                            <a href="schedule-edward.html">
+                                <span class="name">Edward's Schedule</span>
+                                <span class="role">Software Engineering</span>
                             </a>
                         </div>
                     </li>
@@ -155,12 +155,12 @@ if(isset($_POST["submit"])) {
                     <div class="contact-info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Address</h3>
-                        <p>123 University Street<br>Academic City, 12345</p>
+                        <p>Jounieh Highway, Jounieh 0000</p>
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-phone"></i>
                         <h3>Phone</h3>
-                        <p>+1 (123) 456-7890</p>
+                        <p>+961 71 643 123</p>
                     </div>
                     <div class="contact-info-item">
                         <i class="fas fa-envelope"></i>

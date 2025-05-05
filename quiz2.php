@@ -38,7 +38,7 @@
                             <span class="role">Private Security Contractor</span>
                         </a>
                         <a href="cv-edward.html">
-                            <span class="name">Edward Johnson</span>
+                            <span class="name">Edward Khazzoum</span>
                             <span class="role">Cybersecurity Expert</span>
                         </a>
                     </div>
@@ -49,15 +49,15 @@
                     <div class="schedule-dropdown">
                         <a href="schedule-anthony.html">
                             <span class="name">Anthony's Schedule</span>
-                            <span class="role">Web Development</span>
-                        </a>
-                        <a href="schedule-edward.html">
-                            <span class="name">Edward's Schedule</span>
-                            <span class="role">Cybersecurity</span>
+                            <span class="role">Computer Science</span>
                         </a>
                         <a href="schedule-joseph.html">
                             <span class="name">Joseph's Schedule</span>
                             <span class="role">Security Operations</span>
+                        </a>
+                        <a href="schedule-edward.html">
+                            <span class="name">Edward's Schedule</span>
+                            <span class="role">Software Engineering</span>
                         </a>
                     </div>
                 </li>

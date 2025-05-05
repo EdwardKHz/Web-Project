@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <span class="role">Private Security Contractor</span>
                         </a>
                         <a href="cv-edward.html">
-                            <span class="name">Edward Johnson</span>
+                            <span class="name">Edward Khazzoum</span>
                             <span class="role">Cybersecurity Expert</span>
                         </a>
                     </div>
