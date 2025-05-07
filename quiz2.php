@@ -66,7 +66,7 @@
                 <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="quiz2.php" class="active">Quiz 2</a></li>
                 <li><a href="arabic.html">Arabic</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
