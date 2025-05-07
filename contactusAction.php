@@ -110,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
 
                     <div class="back-link">
-                        <a href="contact.php">
+                        <a href="contact.html">
                             <i class="fas fa-arrow-left"></i> Back to Contact Form
                         </a>
                     </div>
