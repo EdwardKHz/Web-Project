@@ -1,13 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('sidebar');
-    const mainContent = document.getElementById('mainContent');
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const nav = document.querySelector('nav');
     const scheduleSwitcher = document.querySelector('.schedule-switcher');
-    const scheduleDropdown = document.querySelector('.schedule-dropdown');
     const cvSwitcher = document.querySelector('.cv-switcher');
-    const cvDropdown = document.querySelector('.cv-dropdown');
 
     function isMobileScreen() {
         return window.innerWidth <= 768;
@@ -18,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.toggle('active');
             const navUl = nav.querySelector('ul');
             if (navUl) {
-                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+                navUl.style.display = nav.classList.contains('active') ? 'block' : 'none';
             }
         }
     }
@@ -97,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.remove('active');
             const navUl = nav.querySelector('ul');
             if (navUl) {
-                navUl.style.display = 'flex';
+                navUl.style.removeProperty('display');
             }
         }
     });
@@ -217,36 +214,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
             return true;
-        });
-    }
-
-    // Media page functionality
-    const mediaItems = document.querySelectorAll('.media-item');
-    if (mediaItems.length > 0) {
-        mediaItems.forEach(item => {
-            item.addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
-        });
-    }
-
-    // Research page functionality
-    const researchItems = document.querySelectorAll('.research-item');
-    if (researchItems.length > 0) {
-        researchItems.forEach(item => {
-            item.addEventListener('click', function() {
-                this.classList.toggle('expanded');
-            });
-        });
-    }
-
-    // Arabic page functionality
-    const arabicText = document.querySelectorAll('.arabic-text');
-    if (arabicText.length > 0) {
-        arabicText.forEach(text => {
-            text.addEventListener('click', function() {
-                this.classList.toggle('translated');
-            });
         });
     }
 }); 

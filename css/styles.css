@@ -945,7 +945,7 @@ footer {
 
   /* Timeline */
   .timeline::before {
-    left: 0;
+    display: none;
   }
   .timeline-item {
     width: 100%;

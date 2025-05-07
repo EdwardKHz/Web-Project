@@ -16,6 +16,7 @@
     </style>
 </head>
 <body>
+    <div class="layout">
     <header>
         <div class="logo">
             <a href="quiz2.php">Quiz 2.</a>
@@ -307,6 +308,7 @@
         </div>
         <p class="footer-tech">© 2024 My Website</p>
     </footer>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html> 
