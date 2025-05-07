@@ -29,27 +29,88 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .thank-you-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .thank-you-section h1 {
+            color: #ff6b6b;
+            margin-bottom: 30px;
+        }
+
+        .message-box {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .message-box h2 {
+            color: #155724;
+            margin-bottom: 20px;
+        }
+
+        .submitted-info {
+            text-align: left;
+            margin-top: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .submitted-info h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .submitted-info p {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .submitted-info strong {
+            color: #ff6b6b;
+        }
+
+        .back-link {
+            margin-top: 30px;
+        }
+
+        .back-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="layout">
         <main class="main-content">
-            <section class="thank-you-section" style="text-align: center; padding: 50px 20px;">
-                <h1 style="color: #2563eb; margin-bottom: 30px;">
+            <section class="thank-you-section">
+                <h1>
                     <i class="fas fa-check-circle"></i> Thank You!
                 </h1>
-                <div class="message-box" style="background-color: #f8f9fa; padding: 30px; border-radius: 10px; max-width: 600px; margin: 0 auto;">
-                    <h2 style="color: #155724; margin-bottom: 20px;">Your Message Has Been Submitted!</h2>
+                <div class="message-box">
+                    <h2>Your Message Has Been Submitted!</h2>
                     
-                    <div class="submitted-info" style="text-align: left; margin-top: 30px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <h3 style="color: #2563eb; margin-bottom: 15px; font-size: 1.2em;">Submitted Information:</h3>
-                        <p style="color: #333; margin: 10px 0;"><strong style="color: #2563eb;">Name:</strong> <?php echo $name; ?></p>
-                        <p style="color: #333; margin: 10px 0;"><strong style="color: #2563eb;">Email:</strong> <?php echo $email; ?></p>
-                        <p style="color: #333; margin: 10px 0;"><strong style="color: #2563eb;">Subject:</strong> <?php echo $subject; ?></p>
-                        <p style="color: #333; margin: 10px 0;"><strong style="color: #2563eb;">Message:</strong> <?php echo nl2br($message); ?></p>
+                    <div class="submitted-info">
+                        <h3>Submitted Information:</h3>
+                        <p><strong>Name:</strong> <?php echo $name; ?></p>
+                        <p><strong>Email:</strong> <?php echo $email; ?></p>
+                        <p><strong>Subject:</strong> <?php echo $subject; ?></p>
+                        <p><strong>Message:</strong> <?php echo nl2br($message); ?></p>
                     </div>
 
-                    <div class="back-link" style="margin-top: 30px;">
-                        <a href="contact.html" style="display: inline-block; padding: 10px 20px; background-color: #2563eb; color: white; text-decoration: none; border-radius: 5px;">
+                    <div class="back-link">
+                        <a href="contact.php">
                             <i class="fas fa-arrow-left"></i> Back to Contact Form
                         </a>
                     </div>
@@ -58,4 +119,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </main>
     </div>
 </body>
-</html> 
+</html>
