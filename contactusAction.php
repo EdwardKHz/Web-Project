@@ -2,19 +2,62 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
+$errors = [];
+$name = $email = $subject = $message = '';
 
-    // Database connection and insertion
-    $conn = new mysqli('localhost', 'root', '', 'WebProject');
-    $stmt = $conn->prepare("INSERT INTO contact (fname, email, subject, message) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $email, $subject, $message);
-    $stmt->execute();
-    $stmt->close();
-    $conn->close();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate name
+    if (empty($_POST['name'])) {
+        $errors[] = "Name is required";
+    } else {
+        $name = htmlspecialchars($_POST['name']);
+    }
+
+    // Validate email
+    if (empty($_POST['email'])) {
+        $errors[] = "Email is required";
+    } else {
+        $email = htmlspecialchars($_POST['email']);
+    }
+
+    // Validate subject
+    if (empty($_POST['subject'])) {
+        $errors[] = "Subject is required";
+    } else {
+        $subject = htmlspecialchars($_POST['subject']);
+    }
+
+    // Validate message
+    if (empty($_POST['message'])) {
+        $errors[] = "Message is required";
+    } else {
+        $message = htmlspecialchars($_POST['message']);
+    }
+
+    // If no errors, proceed with database insertion
+    if (empty($errors)) {
+        try {
+            $conn = new mysqli('localhost', 'root', '', 'WebProject');
+            if ($conn->connect_error) {
+                throw new Exception("Connection failed: " . $conn->connect_error);
+            }
+            
+            $stmt = $conn->prepare("INSERT INTO contact (fname, email, subject, message) VALUES (?, ?, ?, ?)");
+            if (!$stmt) {
+                throw new Exception("Prepare failed: " . $conn->error);
+            }
+            
+            $stmt->bind_param("ssss", $name, $email, $subject, $message);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed: " . $stmt->error);
+            }
+            
+            $stmt->close();
+            $conn->close();
+        } catch (Exception $e) {
+            $errors[] = "Database error: " . $e->getMessage();
+        }
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -36,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .thank-you-section h1 {
-            color: #ff6b6b;
+            color: #2563eb;
             margin-bottom: 30px;
         }
 
@@ -63,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .submitted-info h3 {
-            color: #ff6b6b;
+            color: #2563eb;
             margin-bottom: 15px;
             font-size: 1.2em;
         }
@@ -74,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .submitted-info strong {
-            color: #ff6b6b;
+            color: #2563eb;
         }
 
         .back-link {
@@ -84,10 +127,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .back-link a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #ff6b6b;
+            background-color: #2563eb;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .error-message ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .error-message li {
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -95,26 +156,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="layout">
         <main class="main-content">
             <section class="thank-you-section">
-                <h1>
-                    <i class="fas fa-check-circle"></i> Thank You!
-                </h1>
-                <div class="message-box">
-                    <h2>Your Message Has Been Submitted!</h2>
-                    
-                    <div class="submitted-info">
-                        <h3>Submitted Information:</h3>
-                        <p><strong>Name:</strong> <?php echo $name; ?></p>
-                        <p><strong>Email:</strong> <?php echo $email; ?></p>
-                        <p><strong>Subject:</strong> <?php echo $subject; ?></p>
-                        <p><strong>Message:</strong> <?php echo nl2br($message); ?></p>
+                <?php if (!empty($errors)): ?>
+                    <div class="message-box">
+                        <div class="error-message">
+                            <h2><i class="fas fa-exclamation-circle"></i> Please correct the following errors:</h2>
+                            <ul>
+                                <?php foreach ($errors as $error): ?>
+                                    <li><?php echo $error; ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                        <div class="back-link">
+                            <a href="contact.html">
+                                <i class="fas fa-arrow-left"></i> Back to Contact Form
+                            </a>
+                        </div>
                     </div>
+                <?php else: ?>
+                    <h1>
+                        <i class="fas fa-check-circle"></i> Thank You!
+                    </h1>
+                    <div class="message-box">
+                        <h2>Your Message Has Been Submitted!</h2>
+                        
+                        <div class="submitted-info">
+                            <h3>Submitted Information:</h3>
+                            <p><strong>Name:</strong> <?php echo $name; ?></p>
+                            <p><strong>Email:</strong> <?php echo $email; ?></p>
+                            <p><strong>Subject:</strong> <?php echo $subject; ?></p>
+                            <p><strong>Message:</strong> <?php echo nl2br($message); ?></p>
+                        </div>
 
-                    <div class="back-link">
-                        <a href="contact.html">
-                            <i class="fas fa-arrow-left"></i> Back to Contact Form
-                        </a>
+                        <div class="back-link">
+                            <a href="contact.php">
+                                <i class="fas fa-arrow-left"></i> Back to Contact Form
+                            </a>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </section>
         </main>
     </div>
