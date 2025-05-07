@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <header>
         <div class="logo">
-            <a href="quiz2.php">Quiz 2.</a>
+            <a href="quiz2.html">Quiz 2.</a>
         </div>
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
             <i class="fas fa-bars"></i>
@@ -149,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </li>
                 <li><a href="media.html">Media</a></li>
                 <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="quiz2.php" class="active">Quiz 2</a></li>
+                <li><a href="quiz2.html" class="active">Quiz 2</a></li>
                 <li><a href="arabic.html">Arabic</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
@@ -221,7 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
         </div>
-        <a href="quiz2.php" class="retake-btn">Retake Quiz</a>
+        <a href="quiz2.html" class="retake-btn">Retake Quiz</a>
     </div>
     <footer>
         <div class="footer-content">
